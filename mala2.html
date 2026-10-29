@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesan Untukmu 💗</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(
+        135deg,
+        #ffb6d9,
+        #ffe4ec,
+        #ff8fc7
+      );
+      padding: 20px;
+    }
+
+    .kotak {
+      background: white;
+      width: 100%;
+      max-width: 380px;
+      padding: 35px 25px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+      animation: muncul 0.7s ease;
+    }
+
+    h2 {
+      color: #be185d;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #6b7280;
+      line-height: 1.8;
+      margin-bottom: 22px;
+      font-size: 15px;
+    }
+
+    button {
+      background: #ec4899;
+      color: white;
+      border: none;
+      padding: 12px 35px;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #db2777;
+      transform: scale(1.05);
+    }
+
+    #halamanPesan {
+      display: none;
+    }
+
+    .emoji {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    @keyframes muncul {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HALAMAN AWAL -->
+  <div class="kotak" id="halamanAwal">
+    <div class="emoji">💌</div>
+
+    <h2>Ada Pesan Untukmu</h2>
+
+    <p>
+      Ada sesuatu yang ingin kusampaikan.
+      Coba buka pesan ini, ya! 💗
+    </p>
+
+    <button onclick="bukaPesan()">Buka 💕</button>
+  </div>
+
+  <!-- HALAMAN PESAN -->
+  <div class="kotak" id="halamanPesan">
+    <div class="emoji">💖</div>
+
+    <h2>Pesan Untukmu</h2>
+
+    <p>
+      OJOK SUWE SUWE IKU NGISISNG OPO NGELAHIRNO.
+
+      <br><br>
+
+    </p>
+
+    <button onclick="kembali()">Kembali 💌</button>
+  </div>
+
+  <script>
+    function bukaPesan() {
+      document.getElementById("halamanAwal").style.display = "none";
+
+      const pesan = document.getElementById("halamanPesan");
+      pesan.style.display = "block";
+
+      pesan.style.animation = "none";
+      void pesan.offsetWidth;
+      pesan.style.animation = "muncul 0.7s ease";
+    }
+
+    function kembali() {
+      document.getElementById("halamanPesan").style.display = "none";
+
+      const awal = document.getElementById("halamanAwal");
+      awal.style.display = "block";
+
+      awal.style.animation = "none";
+      void awal.offsetWidth;
+      awal.style.animation = "muncul 0.7s ease";
+    }
+  </script>
+
+</body>
+</html>
